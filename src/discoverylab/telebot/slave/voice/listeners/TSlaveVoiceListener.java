@@ -24,6 +24,7 @@ public class TSlaveVoiceListener extends CoreDataReaderAdapter {
 	public TSlaveVoiceListener(){
 		voiceManager = VoiceManager.getInstance();
 		voice = voiceManager.getVoice("kevin16");
+		voice.allocate();
 	}
 
 	public void on_data_available(DataReader reader) {
