@@ -8,6 +8,8 @@ import com.rti.dds.subscription.SampleInfo;
 import com.rti.dds.subscription.SampleInfoSeq;
 import com.rti.dds.subscription.SampleStateKind;
 import com.rti.dds.subscription.ViewStateKind;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 
 import TelebotDDSCore.Source.Java.Generated.master.voice.TMasterToSlaveVoice;
 import TelebotDDSCore.Source.Java.Generated.master.voice.TMasterToSlaveVoiceDataReader;
@@ -16,6 +18,14 @@ import discoverylab.telebot.slave.core.readers.CoreDataReaderAdapter;
 import jssc.SerialPortException;
 
 public class TSlaveVoiceListener extends CoreDataReaderAdapter {
+	
+	private static Voice voice;
+	private static VoiceManager voiceManager;
+	public TSlaveVoiceListener(){
+		voiceManager = VoiceManager.getInstance();
+		voice = voiceManager.getVoice("kevin16");
+	}
+
 	public void on_data_available(DataReader reader) {
 		TMasterToSlaveVoiceDataReader tMasterVoiceReader = (TMasterToSlaveVoiceDataReader) reader;
 		TMasterToSlaveVoiceSeq dataSeq = new TMasterToSlaveVoiceSeq();
@@ -38,8 +48,16 @@ public class TSlaveVoiceListener extends CoreDataReaderAdapter {
 					
 					switch(commandStr){
 						case "HL":
+							voice.speak("Hello, welcome to Discovery Lab");
 							break;
 						case "NM":
+							voice.speak("My name is Hutch");
+							break;
+						case "ST":
+							voice.speak("Stopping");
+							break;
+						default:
+							voice.speak("I did not understand the command");
 							break;
 					}
 					System.out.println("DDS DATA: " + commandStr);

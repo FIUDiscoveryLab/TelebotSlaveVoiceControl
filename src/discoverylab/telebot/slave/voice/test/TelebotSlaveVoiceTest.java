@@ -45,7 +45,7 @@ public class TelebotSlaveVoiceTest {
 			System.out.println(voiceSample.getName());
 		}
 		
-		while(true) {
+/*		while(true) {
 			String words = new Scanner(System.in).nextLine();
 			
 			switch (words.toLowerCase()){
@@ -62,6 +62,6 @@ public class TelebotSlaveVoiceTest {
 					voice.speak("Searching for an answer");
 					break;
 			}
-		}
+		}*/
 	}
 }

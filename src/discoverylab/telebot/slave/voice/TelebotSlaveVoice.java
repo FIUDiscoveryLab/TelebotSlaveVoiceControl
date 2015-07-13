@@ -6,6 +6,7 @@ import jssc.SerialPort;
 public class TelebotSlaveVoice extends CoreSlaveComponent {
 
 	public TelebotSlaveVoice(){
+		
 	}
 	
 	public TelebotSlaveVoice(SerialPort serialPort) {
