@@ -16,3 +16,6 @@
 [submodule "ThirdParty/ndds.5.1.0"]
 	path = ThirdParty/ndds.5.1.0
 	url = https://github.com/FIUDiscoveryLab/ndds.5.1.0.git
+[submodule "ThirdParty/freetts"]
+	path = ThirdParty/freetts
+	url = https://github.com/FIUDiscoveryLab/freetts.git

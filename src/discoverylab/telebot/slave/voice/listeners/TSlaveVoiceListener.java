@@ -42,7 +42,6 @@ public class TSlaveVoiceListener extends CoreDataReaderAdapter {
 						case "NM":
 							break;
 					}
-					
 					System.out.println("DDS DATA: " + commandStr);
 //					getSerialPort().writeString(commandStr);
 				}
